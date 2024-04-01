@@ -1,6 +1,15 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Chatbot, CommonLayout, Error, Main } from "./pages";
+import {
+  Account,
+  Chatbot,
+  CommonLayout,
+  Error,
+  Main,
+  Notifications,
+  Search,
+  Treatments,
+} from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +24,22 @@ const router = createBrowserRouter([
       {
         path: "chatBot/:id",
         element: <Chatbot />,
+      },
+      {
+        path: "search",
+        element: <Search />,
+      },
+      {
+        path: "treatments",
+        element: <Treatments />,
+      },
+      {
+        path: "notifications",
+        element: <Notifications />,
+      },
+      {
+        path: "account",
+        element: <Account />,
       },
     ],
   },
