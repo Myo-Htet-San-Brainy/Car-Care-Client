@@ -5,9 +5,9 @@ const InfoCard = ({ data }) => {
   const { to, displayText, Icon } = data;
   return (
     <NavLink to={to}>
-      <div className="grid place-items-center h-full p-3 border border-white rounded-r-lg">
-        <div className=" text-3xl ">{Icon}</div>
-        <h1 className="capitalize">{displayText}</h1>
+      <div className="h-full grid place-items-center  border border-white rounded-3xl hover:bg-slate-600 transition-all duration-300">
+        <div className=" text-8xl ">{Icon}</div>
+        <h1 className="capitalize text-5xl">{displayText}</h1>
       </div>
     </NavLink>
   );

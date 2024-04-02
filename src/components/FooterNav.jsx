@@ -31,11 +31,11 @@ const FooterNav = () => {
     },
   ];
   return (
-    <div className="grid gap-6 grid-cols-5 place-items-center  h-[11%] border border-yellow-500">
+    <div className="h-[11%] grid grid-cols-5 place-items-center  border-t border-white">
       {navLinks.map((navLink) => {
         return (
           <NavLink key={navLink.id} to={navLink.to}>
-            <div className="grid place-items-center w-20 h-20 rounded-full border border-white">
+            <div className="w-44 h-44 grid place-items-center  rounded-full border border-white hover:bg-slate-600 transition-all duration-300 text-3xl">
               {navLink.displayText}
             </div>
           </NavLink>

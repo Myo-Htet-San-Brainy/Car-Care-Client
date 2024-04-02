@@ -4,9 +4,9 @@ import { Header, FooterNav } from "../components";
 
 const CommonLayout = () => {
   return (
-    <div className="h-screen border border-red-500">
+    <div className="h-screen ">
       <Header />
-      <div className="h-[74%] border border-blue-500">
+      <div className="h-[74%]  ">
         <Outlet />
       </div>
       <FooterNav />

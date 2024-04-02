@@ -1,13 +1,18 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const username = "John";
   return (
-    <div className="h-[15%] py-4 px-6 border border-green-500">
-      <div className="mb-5 grid place-items-center">
-        <div className="px-16 py-5 border border-white rounded-lg">Logo</div>
+    <div className="h-[15%] py-4 px-6 ">
+      <div className="mb-5 h-[80%] grid place-items-center">
+        <NavLink>
+          <div className="py-4 px-8 border border-white rounded-lg text-6xl">
+            Logo
+          </div>
+        </NavLink>
       </div>
-      <h1 className="text-xl font-bold">Hi, {username}</h1>
+      <h1 className="h-[20%] text-5xl font-bold">Hi, {username}</h1>
     </div>
   );
 };

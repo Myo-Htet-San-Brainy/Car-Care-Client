@@ -3,15 +3,15 @@ import React from "react";
 const SuggestionType1 = ({ data }) => {
   const { image, header, text } = data;
   return (
-    <div className="bg-black flex  px-3  h-full carousel-item">
-      <div className="w-[30%] pt-12 border border-red-500">
-        <div className=" object-cover border border-blue-500 ">
-          <img src={image} alt={header} className="rounded-lg" />
-        </div>
+    <div className=" flex  px-8  h-full carousel-item border border-white">
+      <div className="flex items-center w-[30%]  ">
+        <img src={image} alt={header} className="rounded-lg" />
+        {/* <div className=" object-cover border border-blue-500 ">
+        </div> */}
       </div>
-      <div className="py-3 px-3 w-[70%] border border-green-500 text-white">
-        <h1 className="font-bold text-2xl capitalize">{header}</h1>
-        <p className="text-lg capitalize">{text}</p>
+      <div className="w-[70%] pt-10 px-6   text-white">
+        <h1 className="mb-5 font-bold text-6xl capitalize">{header}</h1>
+        <p className="text-4xl capitalize">{text}</p>
       </div>
     </div>
   );

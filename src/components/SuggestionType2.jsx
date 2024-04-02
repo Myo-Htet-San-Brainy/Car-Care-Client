@@ -3,7 +3,7 @@ import React from "react";
 const SuggestionType2 = ({ data }) => {
   const { header, images } = data;
   return (
-    <div className="bg-black px-3 h-full carousel-item grid grid-cols-3 gap-2 place-items-center">
+    <div className=" px-8 h-full carousel-item grid grid-cols-3 gap-5 place-items-center border border-white">
       {images.map((image) => {
         return <img src={image} alt="" className="rounded-lg" />;
       })}

@@ -41,7 +41,7 @@ const suggestions = [
 
 const SuggestionsCarousel = () => {
   return (
-    <div className="h-[30%] w-full border border-yellow-500 carousel carousel-vertical rounded-box">
+    <div className="h-[22%] w-full  carousel carousel-vertical rounded-box ">
       {suggestions.map((suggestion) => {
         if (suggestion.type === "suggestion") {
           if (suggestion["sub-type"] === "image-and-text") {

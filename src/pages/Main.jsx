@@ -6,6 +6,7 @@ import { ImLab } from "react-icons/im";
 import { FaFilePrescription } from "react-icons/fa";
 import { MdHealthAndSafety } from "react-icons/md";
 import { MdVaccines } from "react-icons/md";
+import { FcAssistant } from "react-icons/fc";
 import { InfoCard, SuggestionsCarousel } from "../components";
 import { Link } from "react-router-dom";
 
@@ -49,23 +50,23 @@ const Main = () => {
     },
   ];
   return (
-    <div className="relative h-full px-5 ">
+    <div className=" relative h-full px-10 pt-36">
       {/* Info Cards */}
-      <div className="grid grid-cols-3 gap-3 h-[40%] border border-yellow-500">
+      <div className="h-[40%] grid grid-cols-3 gap-10  ">
         {infoCards.map((infoCard) => {
           return <InfoCard key={infoCard.id} data={infoCard} />;
         })}
       </div>
       {/* Dummy Div */}
-      <div className="h-[6%]"></div>
+      <div className="h-[12%]"></div>
       {/* Carousel */}
       <SuggestionsCarousel />
       {/* Dummy Div */}
-      <div className="h-[24%]"></div>
+      <div className="h-[26%]"></div>
       {/* Chatbot Button */}
       <Link to={"/chatBot/assistant"}>
-        <div className="absolute bottom-5 right-5  grid place-items-center w-24 h-24 rounded-full bg-black text-white">
-          Chat
+        <div className="absolute bottom-14 right-14 bg-gray-200 p-6  rounded-full text-9xl hover:bg-slate-600 transition-all duration-300">
+          <FcAssistant />
         </div>
       </Link>
     </div>
