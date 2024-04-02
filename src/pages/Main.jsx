@@ -6,7 +6,7 @@ import { ImLab } from "react-icons/im";
 import { FaFilePrescription } from "react-icons/fa";
 import { MdHealthAndSafety } from "react-icons/md";
 import { MdVaccines } from "react-icons/md";
-import { InfoCard } from "../components";
+import { InfoCard, SuggestionsCarousel } from "../components";
 
 const Main = () => {
   const infoCards = [
@@ -48,13 +48,19 @@ const Main = () => {
     },
   ];
   return (
-    <div className="h-full px-5 border border-yellow-500">
+    <div className="h-full px-5 ">
+      {/* Info Cards */}
       <div className="grid grid-cols-3 gap-3 h-[40%] border border-yellow-500">
         {infoCards.map((infoCard) => {
           return <InfoCard key={infoCard.id} data={infoCard} />;
         })}
       </div>
-      <div className="h-[60%]">suggestions</div>
+      {/* Dummy Div */}
+      <div className="h-[3%]"></div>
+      {/* Carousel */}
+      <SuggestionsCarousel />
+      {/* Dummy Div */}
+      <div className="h-[27%]"></div>
     </div>
   );
 };
