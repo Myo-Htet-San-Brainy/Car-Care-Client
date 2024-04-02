@@ -7,6 +7,7 @@ import { FaFilePrescription } from "react-icons/fa";
 import { MdHealthAndSafety } from "react-icons/md";
 import { MdVaccines } from "react-icons/md";
 import { InfoCard, SuggestionsCarousel } from "../components";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const infoCards = [
@@ -48,7 +49,7 @@ const Main = () => {
     },
   ];
   return (
-    <div className="h-full px-5 ">
+    <div className="relative h-full px-5 ">
       {/* Info Cards */}
       <div className="grid grid-cols-3 gap-3 h-[40%] border border-yellow-500">
         {infoCards.map((infoCard) => {
@@ -56,11 +57,17 @@ const Main = () => {
         })}
       </div>
       {/* Dummy Div */}
-      <div className="h-[3%]"></div>
+      <div className="h-[6%]"></div>
       {/* Carousel */}
       <SuggestionsCarousel />
       {/* Dummy Div */}
-      <div className="h-[27%]"></div>
+      <div className="h-[24%]"></div>
+      {/* Chatbot Button */}
+      <Link to={"/chatBot/assistant"}>
+        <div className="absolute bottom-5 right-5  grid place-items-center w-24 h-24 rounded-full bg-black text-white">
+          Chat
+        </div>
+      </Link>
     </div>
   );
 };
