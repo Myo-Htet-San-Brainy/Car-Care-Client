@@ -5,7 +5,7 @@ const SuggestionType2 = ({ data }) => {
   return (
     <div className=" px-8 h-full carousel-item grid grid-cols-3 gap-5 place-items-center border border-white">
       {images.map((image) => {
-        return <img src={image} alt="" className="rounded-lg" />;
+        return <img src={image} alt="" className="rounded-lg" key={image} />;
       })}
     </div>
   );

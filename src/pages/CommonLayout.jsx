@@ -1,16 +1,26 @@
-import React from "react";
+import React, { createContext, useContext, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Header, FooterNav } from "../components";
 
+const aContext = createContext(null);
+
+export const useAContext = () => {
+  return useContext(aContext);
+};
+
 const CommonLayout = () => {
+  const [showBackToMainBtn, setShowBackToMainBtn] = useState(false);
+
   return (
-    <div className="h-screen ">
-      <Header />
-      <div className="h-[74%]  ">
-        <Outlet />
+    <aContext.Provider value={{ showBackToMainBtn, setShowBackToMainBtn }}>
+      <div className="h-screen ">
+        <Header />
+        <div className="h-[74%]  ">
+          <Outlet />
+        </div>
+        <FooterNav />
       </div>
-      <FooterNav />
-    </div>
+    </aContext.Provider>
   );
 };
 
