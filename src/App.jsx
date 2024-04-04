@@ -11,6 +11,9 @@ import {
   Treatments,
 } from "./pages";
 
+//loader imports
+import { chatBotLoader } from "./pages/Chatbot";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +27,7 @@ const router = createBrowserRouter([
       {
         path: "chatBot/:id",
         element: <Chatbot />,
+        loader: chatBotLoader,
       },
       {
         path: "search",

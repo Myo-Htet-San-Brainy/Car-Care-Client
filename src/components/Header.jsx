@@ -1,23 +1,23 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAContext } from "../pages/CommonLayout";
+import { IoArrowBackSharp } from "react-icons/io5";
 
-const Header = () => {
-  const { showBackToMainBtn, setShowBackToMainBtn } = useAContext();
+const Header = ({ showBackToMainBtn, setShowBackToMainBtn }) => {
   const navigate = useNavigate();
   function backBtnHandler() {
     navigate("/");
     setShowBackToMainBtn(false);
+    localStorage.removeItem("storedChat");
   }
   const username = "John";
   return (
     <div className="relative h-[15%] py-4 px-6 ">
       {showBackToMainBtn && (
         <div
-          className="absolute top-32 left-20 text-6xl"
+          className="absolute top-32 left-20 text-9xl "
           onClick={backBtnHandler}
         >
-          back
+          <IoArrowBackSharp />
         </div>
       )}
       <div className="mb-5 h-[80%] grid place-items-center">

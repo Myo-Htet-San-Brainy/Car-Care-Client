@@ -1,35 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
+import { navLinks } from "../dummyData";
 
 const FooterNav = () => {
-  const navLinks = [
-    {
-      id: uuidv4(),
-      displayText: "Home",
-      to: "/",
-    },
-    {
-      id: uuidv4(),
-      displayText: "Search",
-      to: "/search",
-    },
-    {
-      id: uuidv4(),
-      displayText: "Treatments",
-      to: "/treatments",
-    },
-    {
-      id: uuidv4(),
-      displayText: "Notifications",
-      to: "/notifications",
-    },
-    {
-      id: uuidv4(),
-      displayText: "Account",
-      to: "/account",
-    },
-  ];
   return (
     <div className="h-[11%] grid grid-cols-5 place-items-center  border-t border-white">
       {navLinks.map((navLink) => {

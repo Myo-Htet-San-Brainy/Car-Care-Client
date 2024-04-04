@@ -4,3 +4,7 @@ export { default as InfoCard } from "./InfoCard";
 export { default as SuggestionsCarousel } from "./SuggestionsCarousel";
 export { default as SuggestionType1 } from "./SuggestionType1";
 export { default as SuggestionType2 } from "./SuggestionType2";
+export { default as ApiMessage } from "./ApiMessage";
+export { default as UserMessage } from "./UserMessage";
+export { default as ChatInput } from "./ChatInput";
+export { default as Chatlog } from "./Chatlog";
