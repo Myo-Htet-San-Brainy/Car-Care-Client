@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { createChatApiMock } from "../Utils/mockApi";
 import { Chatlog, ChatInput } from "../components";
 import { useOutletContext } from "react-router-dom";
@@ -24,10 +24,40 @@ export async function chatBotLoader({ params }) {
   return "";
 }
 
+const chatReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD":
+      console.log("add action handler");
+      return {
+        sessionId: state.sessionId,
+        chatHistory: [
+          ...state.chatHistory,
+          {
+            sender: action.payload.sender,
+            message: action.payload.message,
+          },
+        ],
+      };
+
+    case "REMOVE_LAST":
+      console.log("remove last action handler");
+      const chatHistory = [...state.chatHistory];
+      chatHistory.pop();
+      return {
+        sessionId: state.sessionId,
+        chatHistory: chatHistory,
+      };
+
+    default:
+      throw new Error("unknown action " + action.type);
+  }
+};
+
 const Chatbot = () => {
   const { showBackToMainBtn, setShowBackToMainBtn } = useOutletContext();
   //
-  const [chat, setChat] = useState(
+  const [chat, dispatch] = useReducer(
+    chatReducer,
     JSON.parse(localStorage.getItem("storedChat"))
   );
   useEffect(() => {
@@ -56,7 +86,7 @@ const Chatbot = () => {
     <div className="relative h-full">
       <Chatlog chat={chat} />
       <div className="h-[7%]"></div>
-      <ChatInput updateChatHistory={updateChatHistory} chat={chat} />
+      <ChatInput dispatch={dispatch} chat={chat} />
     </div>
   );
 };

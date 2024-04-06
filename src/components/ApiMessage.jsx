@@ -1,6 +1,14 @@
 import React from "react";
 
 const ApiMessage = ({ message }) => {
+  if (typeof message === "string") {
+    return (
+      <div className="py-10 px-10 flex items-start gap-5  ">
+        <div className="min-w-[5%] h-14 rounded-full bg-green-400 border border-blue-500"></div>
+        <p className="max-w-[95%] grow text-5xl text-white">{message}</p>
+      </div>
+    );
+  }
   return (
     <div className="py-10 px-10 flex items-start gap-5  ">
       <div className="min-w-[5%] h-14 rounded-full bg-green-400 border border-blue-500"></div>

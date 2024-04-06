@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { continueChatApiMock } from "../Utils/mockApi";
 
-const ChatInput = ({ updateChatHistory, chat }) => {
+const ChatInput = ({ dispatch, chat }) => {
   const [aiRploading, setAiRpLoading] = useState(false);
 
   function submitHandler(e) {
@@ -12,7 +12,14 @@ const ChatInput = ({ updateChatHistory, chat }) => {
     const userMessage = formData.get("userInput");
     //
     form.reset();
-    updateChatHistory(userMessage, "user");
+    dispatch({
+      type: "ADD",
+      payload: { sender: "user", message: userMessage },
+    });
+    dispatch({
+      type: "ADD",
+      payload: { sender: "api", message: "loading" },
+    });
     setAiRpLoading(true);
     fetchApiReplyAndUpdateChat(chat.sessionId, userMessage);
   }
@@ -21,7 +28,13 @@ const ChatInput = ({ updateChatHistory, chat }) => {
     try {
       setTimeout(() => {
         const res = continueChatApiMock(sessionId, userMessage);
-        updateChatHistory(res.reply, "api");
+        dispatch({
+          type: "REMOVE_LAST",
+        });
+        dispatch({
+          type: "ADD",
+          payload: { sender: "api", message: res.reply },
+        });
         setAiRpLoading(false);
       }, 2000);
     } catch (error) {
