@@ -1,7 +1,7 @@
 import React from "react";
 
 const Treatments = () => {
-  return <div>Treatments</div>;
+  return <div>Accessories</div>;
 };
 
 export default Treatments;

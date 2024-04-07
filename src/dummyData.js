@@ -97,8 +97,8 @@ export const navLinks = [
   },
   {
     id: uuidv4(),
-    displayText: "Treatments",
-    to: "/treatments",
+    displayText: "Accessories",
+    to: "/accessories",
   },
   {
     id: uuidv4(),

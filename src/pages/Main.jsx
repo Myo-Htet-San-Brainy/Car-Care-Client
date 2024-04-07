@@ -2,51 +2,46 @@ import React, { useState } from "react";
 import { FcAssistant } from "react-icons/fc";
 import { InfoCard, SuggestionsCarousel } from "../components";
 import { Link } from "react-router-dom";
-import { FaHospital } from "react-icons/fa";
-import { FaUserDoctor } from "react-icons/fa6";
-import { ImLab } from "react-icons/im";
-import { FaFilePrescription } from "react-icons/fa";
-import { MdHealthAndSafety } from "react-icons/md";
-import { MdVaccines } from "react-icons/md";
+import { FaCar } from "react-icons/fa";
 import { v4 as uuidv4 } from "uuid";
 import { Tooltip } from "react-tippy";
 
 const infoCards = [
   {
     id: uuidv4(),
-    displayText: "hospitals",
-    to: "/chatBot/hospitals",
-    Icon: <FaHospital />,
+    displayText: "Car Wash",
+    to: "/chatBot/carWash",
+    Icon: <FaCar />,
   },
   {
     id: uuidv4(),
-    displayText: "doctors",
-    to: "/chatBot/doctors",
-    Icon: <FaUserDoctor />,
+    displayText: "Car Indoors",
+    to: "/chatBot/carIndoors",
+    Icon: <FaCar />,
   },
   {
     id: uuidv4(),
-    displayText: "labs",
-    to: "/chatBot/labs",
-    Icon: <ImLab />,
+    displayText: "Car Outdoors",
+    to: "/chatBot/carOutdoors",
+    Icon: <FaCar />,
   },
   {
     id: uuidv4(),
-    displayText: "prescriptions",
-    to: "/chatBot/prescriptions",
-    Icon: <FaFilePrescription />,
+    displayText: "Car Fancy Stuff",
+    to: "/chatBot/carFancyStuff",
+    Icon: <FaCar />,
   },
   {
     id: uuidv4(),
-    displayText: "physiotherapy",
-    to: "/chatBot/physiotherapy",
-    Icon: <MdHealthAndSafety />,
+    displayText: "Race Cars",
+    to: "/chatBot/raceCars",
+    Icon: <FaCar />,
   },
   {
     id: uuidv4(),
-    displayText: "vaccines",
-    to: "/chatBot/vaccines",
-    Icon: <MdVaccines />,
+    displayText: "Car Health",
+    to: "/chatBot/carHealth",
+    Icon: <FaCar />,
   },
 ];
 
