@@ -1,17 +1,28 @@
 import React from "react";
+import Lottie from "lottie-react";
+import ApiMessageLoading from "../assets/apiMessageLoading.json";
 
 const ApiMessage = ({ message }) => {
   if (typeof message === "string") {
     return (
       <div className="py-10 px-10 flex items-start gap-5  ">
-        <div className="min-w-[5%] h-14 rounded-full bg-green-400 border border-blue-500"></div>
-        <p className="max-w-[95%] grow text-5xl text-white">{message}</p>
+        <div className="min-w-[5%] h-14 rounded-full bg-green-400 "></div>
+        <div className="max-w-[95%] grow ">
+          <Lottie
+            animationData={ApiMessageLoading}
+            loop={true}
+            style={{
+              width: "6rem",
+              height: "6rem",
+            }}
+          />
+        </div>
       </div>
     );
   }
   return (
     <div className="py-10 px-10 flex items-start gap-5  ">
-      <div className="min-w-[5%] h-14 rounded-full bg-green-400 border border-blue-500"></div>
+      <div className="min-w-[5%] h-14 rounded-full bg-green-400 "></div>
       <div className="max-w-[95%] grow text-5xl text-white">
         {message.map((item) => {
           const { type, content } = item;

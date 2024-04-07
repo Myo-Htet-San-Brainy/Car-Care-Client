@@ -27,7 +27,6 @@ export async function chatBotLoader({ params }) {
 const chatReducer = (state, action) => {
   switch (action.type) {
     case "ADD":
-      console.log("add action handler");
       return {
         sessionId: state.sessionId,
         chatHistory: [
@@ -40,7 +39,6 @@ const chatReducer = (state, action) => {
       };
 
     case "REMOVE_LAST":
-      console.log("remove last action handler");
       const chatHistory = [...state.chatHistory];
       chatHistory.pop();
       return {
@@ -54,7 +52,7 @@ const chatReducer = (state, action) => {
 };
 
 const Chatbot = () => {
-  const { showBackToMainBtn, setShowBackToMainBtn } = useOutletContext();
+  const { setShowBackToMainBtn } = useOutletContext();
   //
   const [chat, dispatch] = useReducer(
     chatReducer,
@@ -63,20 +61,6 @@ const Chatbot = () => {
   useEffect(() => {
     localStorage.setItem("storedChat", JSON.stringify(chat));
   }, [chat]);
-  function updateChatHistory(message, sender) {
-    setChat((prev) => {
-      return {
-        sessionId: prev.sessionId,
-        chatHistory: [
-          ...prev.chatHistory,
-          {
-            sender: sender,
-            message: message,
-          },
-        ],
-      };
-    });
-  }
   //
   useEffect(() => {
     setShowBackToMainBtn(true);
@@ -85,7 +69,7 @@ const Chatbot = () => {
   return (
     <div className="relative h-full">
       <Chatlog chat={chat} />
-      <div className="h-[7%] border border-red-500"></div>
+      <div className="h-[7%]"></div>
       <ChatInput dispatch={dispatch} chat={chat} />
     </div>
   );
