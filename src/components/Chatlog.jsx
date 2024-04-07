@@ -10,13 +10,14 @@ const Chatlog = ({ chat }) => {
   }, [chat]);
 
   function autoScroll() {
+    console.log("auto scroll");
     dummyDev.current.scrollIntoView({
       behavior: "smooth",
     });
   }
 
   return (
-    <div className="h-[93%]  overflow-scroll">
+    <div className="h-[93%]  overflow-scroll border border-white">
       {chat.chatHistory.map((item) => {
         const { sender, message } = item;
         if (sender === "api") {

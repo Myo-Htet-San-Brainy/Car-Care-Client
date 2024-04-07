@@ -85,7 +85,7 @@ const Chatbot = () => {
   return (
     <div className="relative h-full">
       <Chatlog chat={chat} />
-      <div className="h-[7%]"></div>
+      <div className="h-[7%] border border-red-500"></div>
       <ChatInput dispatch={dispatch} chat={chat} />
     </div>
   );
